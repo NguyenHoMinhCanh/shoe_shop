@@ -1,4 +1,4 @@
-package com.minhcanh.shoe_shop.Controlller;
+package com.minhcanh.shoe_shop.Controller;
 
 import com.minhcanh.shoe_shop.Entity.Cart;
 import com.minhcanh.shoe_shop.Service.CartService;
