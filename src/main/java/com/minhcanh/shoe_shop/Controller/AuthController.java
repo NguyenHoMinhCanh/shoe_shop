@@ -3,6 +3,7 @@ package com.minhcanh.shoe_shop.Controller;
 import com.minhcanh.shoe_shop.Entity.User;
 import com.minhcanh.shoe_shop.Repository.UserRepository;
 import com.minhcanh.shoe_shop.Service.UserService;
+import com.minhcanh.shoe_shop.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
