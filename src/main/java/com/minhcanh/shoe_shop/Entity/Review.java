@@ -1,31 +1,34 @@
 package com.minhcanh.shoe_shop.Entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "cart_items")
-public class CartItem {
+@Table(name = "reviews")
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "cart_id")
-    @JsonIgnore
-    private Cart cart;
-
-    @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
-    private int quantity;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private String size; // size giày đã chọn: "39", "40", "41"...
+    private Integer rating; // 1–5 sao
+
+    @Column(length = 1000)
+    private String comment;
+
+    private LocalDateTime createdAt;
 }

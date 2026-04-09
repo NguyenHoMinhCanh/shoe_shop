@@ -14,8 +14,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String username;
-    private String password;
-    private String role; // user, admin
 
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String password;
+
+    private String role; // USER, ADMIN
+
+    private String fullName;
+
+    @Column(unique = true)
+    private String email;
+
+    private String phone;
 }

@@ -19,9 +19,19 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     private Double totalPrice;
-    private String status; // pending, paid
+    private String status; // PENDING, PAID, SHIPPED, DELIVERED, CANCELLED
+
     private LocalDateTime createAt;
+
+    // Thông tin giao hàng
+    private String recipientName;
+    private String phone;
+    private String shippingAddress;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
